@@ -13,4 +13,26 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+
+//= require ./vendor/jquery.min
+//= require ./vendor/jquery-ui-1.10.4.custom
+//= require ./vendor/json2
+//= require ./vendor/underscore-min
+//= require ./vendor/bootstrap.min
+//= require ./vendor/backbone-min
+//= require ./vendor/backbone.marionette
+//= require ./vendor/Backbone.ModelBinder.min
+//= require ./vendor/backbone.localStorage-min
+
+//= require ./fellows_app
+
+//= require_tree ./lib
+//= require_tree ./helpers
+//= require_tree ./jquery
+//= require_tree ./behaviors
+//= require_tree ./models
+//= require_tree ./collections
+//= require_tree ./views
+//= require_tree ./routers
+
 //= require_tree .

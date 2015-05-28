@@ -1,0 +1,121 @@
+<div class="container container-fluid root"></div>
+ <!-- template for content Views(layout) -->
+<script type="text/template" id="layout">
+   <div class="row">
+    <div class="col-md-3">
+      <h2>Our working team</h2>
+    </div>
+
+    <div class="col-md-1">
+      <a href="#/fellows/add" class="btn btn-success btn-sm inline">Add</a>
+    </div>
+  </div>
+  <div class="row row-fluid" id="content"></div>
+</script>
+
+<!-- template for Item View -->
+<script type="text/template" id="userContainer">
+  <td><%%= id %></td>
+  <td><a href="#/fellows/<%%= id %>/edit"><%%= name %></a></td>
+  <td><%%= hours %></td>
+  <td><%%= presence %></td>
+</script>
+
+<!-- template for Index View (CompositeView) -->
+<script type="text/template" id="tableFellows">
+  <span  class="tooltip_item"><b>Tooltip for testing</b></span>
+  <br>
+  <br>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Hours</th>
+        <th>Presence</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+</script>
+
+<!-- template for Form View -->
+<script type="text/template" id="formUser">
+  <div class="form-group">
+    <label id="col-md-2 control-label" for="name">Name
+      <div id="col-md-5">
+        <input class="form-control" id="name" type="text" name="name" autofocus="autofocus">
+      </div>
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label id="col-md-2 control-label" for="hours">Hours
+      <div id="col-md-5">
+        <input class="form-control" id="hours" data-fellowsapp="calc" type="text" name="hours">
+      </div>
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label id="col-md-2 control-label" for="presence">Presence
+      <div id="col-md-5">
+        <input id="presence" type="checkbox" name="presence">
+      </div>
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label id="col-md-2 control-label" for="comment">Comment
+      <div id="col-md-5">
+        <textarea class="form-control" rows="8" cols="80" id="comment" name="comment">
+      </div>
+    </label>
+  </div>
+</script>
+
+<!-- template for Add View -->
+<script type="text/template" id="userAdd">
+  <h3>Add Fellow</h3>
+
+  <form class="form form-horizontal" id="form">
+    <fieldset>
+      <div class="well well-regulate">
+        <div class="form-group">
+          <label class="col-md-1"></label>
+          <div class="col-md-10">
+            <input class="btn btn-success" type="submit" id="submit" value="Save">
+            <a href="" class="btn btn-default" id="back">Back</a>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</script>
+
+<!-- template for Edit View -->
+<script type="text/template" id="userEdit">
+  <h3>Edit Fellow</h3>
+
+  <form class="form form-horizontal" id="form">
+    <fieldset>
+      <div class="well well-regulate">
+        <div class="form-group">
+          <label class="col-md-1"></label>
+          <div class="col-md-10">
+            <input class="btn btn-success" type="submit"  id="submit" value="Save">
+            <a href="" class="btn btn-default" id="back">Back</a>
+            <a href="" class="btn btn-danger pull-right" id="delete">Delete</a>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</script>
+
+<script>
+  $(document).ready(function(){
+    window.FellowsApp.init();
+  });
+</script>

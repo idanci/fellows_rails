@@ -1,0 +1,21 @@
+h2 {
+  color: green;
+}
+
+h3 {
+  color: blue;
+}
+
+.inline {
+  display: inline-block;
+  margin-top: 18px;
+}
+
+.well-regulate {
+  height: 75px;
+  margin-top: 40px;
+}
+
+.color_it {
+  background-color: #c6ef67;
+}
