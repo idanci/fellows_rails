@@ -26,7 +26,7 @@ TodosApp.Views.TodoForm = Backbone.Marionette.ItemView.extend(
     @modelBinder.unbind()
 
   back: ->
-    window.history.back()
+    window.location.href = "http://localhost:3000"
 
   save: (event) ->
     event.preventDefault()

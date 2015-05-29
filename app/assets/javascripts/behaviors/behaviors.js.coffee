@@ -7,7 +7,7 @@ DestroyTodo = Marionette.Behavior.extend(
     if confirm(@options.message)
       @view.model.destroy()
       @view.close()
-      window.history.back()
+      window.location.href = "http://localhost:3000"
 )
 AddFirstInputFocusForFirefox = Marionette.Behavior.extend(
   setFocus: ->
@@ -31,7 +31,7 @@ ColorBackground = Marionette.Behavior.extend(
 GoBack = Marionette.Behavior.extend(
   events: 'click #back': 'back'
   back: ->
-    window.history.back()
+    window.location.href = "http://localhost:3000"
 )
 SubmitForm = Marionette.Behavior.extend(
   events: 'submit #form': 'save'
@@ -39,8 +39,7 @@ SubmitForm = Marionette.Behavior.extend(
     event.preventDefault()
     TodosApp.todos.add @view.model
     @view.model.save()
-    window.history.back()
-    false
+    window.location.href = "http://localhost:3000"
 )
 CloseWarnOnAdd = Marionette.Behavior.extend(
   defaults: 'message': 'you are closing!'
@@ -56,18 +55,10 @@ CloseWarnOnEdit = Marionette.Behavior.extend(
     alert @options.message
     @view.close()
 )
-ToolTip = Marionette.Behavior.extend(
-  ui: tooltip: '.tooltip_item'
-  onShow: ->
-    @ui.tooltip.tooltip
-      trigger: 'hover focus'
-      title: @options.text
-)
 
 Marionette.Behaviors.behaviorsLookup = ->
   TodosApp.Behaviors
 
-TodosApp.Behaviors.ToolTip = ToolTip
 TodosApp.Behaviors.CloseWarnOnAdd = CloseWarnOnAdd
 TodosApp.Behaviors.CloseWarnOnEdit = CloseWarnOnEdit
 TodosApp.Behaviors.DestroyTodo = DestroyTodo
