@@ -1,8 +1,8 @@
-FellowsApp.Views.FellowForm = Backbone.Marionette.ItemView.extend(
+TodosApp.Views.TodoForm = Backbone.Marionette.ItemView.extend(
   bindings:
     name: '[name=name]'
     hours: '[name=hours]'
-    presence: '[name=presence]'
+    urgent: '[name=urgent]'
     comment: '[name=comment]'
 
   behaviors: {}
@@ -30,7 +30,7 @@ FellowsApp.Views.FellowForm = Backbone.Marionette.ItemView.extend(
 
   save: (event) ->
     event.preventDefault()
-    FellowsApp.fellows.add @model
+    TodosApp.todos.add @model
     @model.save()
     @back()
     false

@@ -1,6 +1,6 @@
-FellowsApp.Collections.Fellows = Backbone.Collection.extend(
-  localStorage: new (Backbone.LocalStorage)('fellows')
-  model: FellowsApp.Models.Fellow
-  comparator: (fellow) ->
-    fellow.get 'name'
+TodosApp.Collections.Todos = Backbone.Collection.extend(
+  localStorage: new (Backbone.LocalStorage)('todos')
+  model: TodosApp.Models.Todo
+  comparator: (todo) ->
+    todo.get 'name'
 )

@@ -1,13 +1,13 @@
-var fellows = new FellowsApp.Collections.Fellows([
-   { name: "Ivan Zarea", hours: 8, presence: true },
-   { name: "Nicu Rotaru", hours: 8, presence: true },
-   { name: "Vladimir Pintea", hours: 8, presence: true },
-   { name: "Andrei Lisnic", hours: 8, presence: true },
-   { name: "Ivan Danci",  hours: 8, presence: true },
-   { name: "Vitalii Dobrovichan", hours: 8, presence: true},
-   { name: "Vladislav Ledniov", hours: 4, presence: false}
+var todos = new TodosApp.Collections.Todos([
+   { name: "Ivan", hours: 8, utgent: true },
+   { name: "Nicu", hours: 8, utgent: true },
+   { name: "Vladimir", hours: 8, utgent: true },
+   { name: "Andrei", hours: 8, utgent: true },
+   { name: "Ivan",  hours: 8, utgent: true },
+   { name: "Vitalii", hours: 8, utgent: true},
+   { name: "Vladislav", hours: 4, utgent: false}
 ]);
 
-fellows.each(function(model) {
+todos.each(function(model) {
   model.save();
 });

@@ -3,11 +3,11 @@
 <script type="text/template" id="layout">
    <div class="row">
     <div class="col-md-3">
-      <h2>Our working team</h2>
+      <h2>Todo list:</h2>
     </div>
 
     <div class="col-md-1">
-      <a href="#/fellows/add" class="btn btn-success btn-sm inline">Add</a>
+      <a href="#/todos/add" class="btn btn-success btn-sm inline">Add</a>
     </div>
   </div>
   <div class="row row-fluid" id="content"></div>
@@ -16,13 +16,13 @@
 <!-- template for Item View -->
 <script type="text/template" id="userContainer">
   <td><%%= id %></td>
-  <td><a href="#/fellows/<%%= id %>/edit"><%%= name %></a></td>
+  <td><a href="#/todos/<%%= id %>/edit"><%%= name %></a></td>
   <td><%%= hours %></td>
-  <td><%%= presence %></td>
+  <td><%%= urgent %></td>
 </script>
 
 <!-- template for Index View (CompositeView) -->
-<script type="text/template" id="tableFellows">
+<script type="text/template" id="tableTodos">
   <span  class="tooltip_item"><b>Tooltip for testing</b></span>
   <br>
   <br>
@@ -32,7 +32,7 @@
         <th>Id</th>
         <th>Name</th>
         <th>Hours</th>
-        <th>Presence</th>
+        <th>Urgent</th>
       </tr>
     </thead>
     <tbody>
@@ -53,15 +53,15 @@
   <div class="form-group">
     <label id="col-md-2 control-label" for="hours">Hours
       <div id="col-md-5">
-        <input class="form-control" id="hours" data-fellowsapp="calc" type="text" name="hours">
+        <input class="form-control" id="hours" data-todosapp="calc" type="text" name="hours">
       </div>
     </label>
   </div>
 
   <div class="form-group">
-    <label id="col-md-2 control-label" for="presence">Presence
+    <label id="col-md-2 control-label" for="urgent">Urgent
       <div id="col-md-5">
-        <input id="presence" type="checkbox" name="presence">
+        <input id="urgent" type="checkbox" name="urgent">
       </div>
     </label>
   </div>
@@ -77,7 +77,7 @@
 
 <!-- template for Add View -->
 <script type="text/template" id="userAdd">
-  <h3>Add Fellow</h3>
+  <h3>Add Todo</h3>
 
   <form class="form form-horizontal" id="form">
     <fieldset>
@@ -96,7 +96,7 @@
 
 <!-- template for Edit View -->
 <script type="text/template" id="userEdit">
-  <h3>Edit Fellow</h3>
+  <h3>Edit Todo</h3>
 
   <form class="form form-horizontal" id="form">
     <fieldset>
@@ -116,6 +116,6 @@
 
 <script>
   $(document).ready(function(){
-    window.FellowsApp.init();
+    window.TodosApp.init();
   });
 </script>

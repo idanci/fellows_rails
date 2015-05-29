@@ -27,7 +27,7 @@ Events:
 */
 
 jQuery(function(){
-  jQuery.widget("fellows_app.calcInput", {
+  jQuery.widget("todos_app.calcInput", {
     options: {
       errorElement: false,        // Error element
       commentElement: false,      // Edit hints element
@@ -76,8 +76,8 @@ jQuery(function(){
 
         // Create Wrapper if not exists
         if (!this.options.wrapperElement) {
-          this.options.wrapperElement = jQuery('<div class="fellows_app-calcinput-wrapper"></div>');
-          jQuery(this.options.wrapperElement).append('<div class="fellows_app-calcinput-equal">=</div>');
+          this.options.wrapperElement = jQuery('<div class="todos_app-calcinput-wrapper"></div>');
+          jQuery(this.options.wrapperElement).append('<div class="todos_app-calcinput-equal">=</div>');
           jQuery(this.options.wrapperElement).css({
             position  : 'absolute',
             left      : this.absL,
@@ -92,10 +92,10 @@ jQuery(function(){
         }
         // Create Calculate if not exists
         if(!this.options.calculateElement){
-          this.options.calculateElement = $('<span class="fellows_app-calcinput-calculate"></span>')
+          this.options.calculateElement = $('<span class="todos_app-calcinput-calculate"></span>')
             .css({fontWeight: 'bold'});
 
-          $('.fellows_app-calcinput-equal', this.options.wrapperElement)
+          $('.todos_app-calcinput-equal', this.options.wrapperElement)
             .css({padding: '3px 0px 3px 0px'})
             .append(this.options.calculateElement);
         }

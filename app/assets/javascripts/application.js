@@ -24,7 +24,7 @@
 //= require ./vendor/Backbone.ModelBinder.min
 //= require ./vendor/backbone.localStorage-min
 
-//= require ./fellows_app
+//= require ./todos_app
 
 //= require_tree ./lib
 //= require_tree ./helpers

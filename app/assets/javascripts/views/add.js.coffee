@@ -1,4 +1,4 @@
-FellowsApp.Views.FellowAdd = FellowsApp.Views.FellowForm.extend(
+TodosApp.Views.TodoAdd = TodosApp.Views.TodoForm.extend(
   template: '#userAdd'
   className: 'container container-fluid'
   behaviors:

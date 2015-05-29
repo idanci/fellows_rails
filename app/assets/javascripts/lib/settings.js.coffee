@@ -1,4 +1,4 @@
-FellowsApp.Settings = do ->
+TodosApp.Settings = do ->
 
   Settings = ->
 
@@ -15,8 +15,8 @@ FellowsApp.Settings = do ->
     number_acute: '`'
 
   Settings.numberFormatSymbol = ->
-    if FellowsApp.profile
-      @NUMBER_FORMAT_SYMBOL[FellowsApp.profile.get('number_format')]
+    if TodosApp.profile
+      @NUMBER_FORMAT_SYMBOL[TodosApp.profile.get('number_format')]
     else
       ''
 

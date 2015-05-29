@@ -1,6 +1,6 @@
-DestroyFellow = Marionette.Behavior.extend(
+DestroyTodo = Marionette.Behavior.extend(
   ui: delete_button: '#delete'
-  defaults: message: 'Are you sure want to delete model?'
+  defaults: message: 'Are you sure want to delete it?'
   events: 'click @ui.delete_button': 'destroy'
   destroy: (event) ->
     event.preventDefault()
@@ -37,7 +37,7 @@ SubmitForm = Marionette.Behavior.extend(
   events: 'submit #form': 'save'
   save: (event) ->
     event.preventDefault()
-    FellowsApp.fellows.add @view.model
+    TodosApp.todos.add @view.model
     @view.model.save()
     window.history.back()
     false
@@ -65,13 +65,13 @@ ToolTip = Marionette.Behavior.extend(
 )
 
 Marionette.Behaviors.behaviorsLookup = ->
-  FellowsApp.Behaviors
+  TodosApp.Behaviors
 
-FellowsApp.Behaviors.ToolTip = ToolTip
-FellowsApp.Behaviors.CloseWarnOnAdd = CloseWarnOnAdd
-FellowsApp.Behaviors.CloseWarnOnEdit = CloseWarnOnEdit
-FellowsApp.Behaviors.DestroyFellow = DestroyFellow
-FellowsApp.Behaviors.GoBack = GoBack
-FellowsApp.Behaviors.SubmitForm = SubmitForm
-FellowsApp.Behaviors.ColorBackground = ColorBackground
-FellowsApp.Behaviors.AddFirstInputFocusForFirefox = AddFirstInputFocusForFirefox
+TodosApp.Behaviors.ToolTip = ToolTip
+TodosApp.Behaviors.CloseWarnOnAdd = CloseWarnOnAdd
+TodosApp.Behaviors.CloseWarnOnEdit = CloseWarnOnEdit
+TodosApp.Behaviors.DestroyTodo = DestroyTodo
+TodosApp.Behaviors.GoBack = GoBack
+TodosApp.Behaviors.SubmitForm = SubmitForm
+TodosApp.Behaviors.ColorBackground = ColorBackground
+TodosApp.Behaviors.AddFirstInputFocusForFirefox = AddFirstInputFocusForFirefox

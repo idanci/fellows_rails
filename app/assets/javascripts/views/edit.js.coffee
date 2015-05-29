@@ -1,8 +1,8 @@
-FellowsApp.Views.FellowEdit = FellowsApp.Views.FellowForm.extend(
+TodosApp.Views.TodoEdit = TodosApp.Views.TodoForm.extend(
   template: '#userEdit'
   className: 'container container-fluid'
   behaviors:
-    DestroyFellow: {}
+    DestroyTodo: {}
     GoBack: {}
     SubmitForm: {}
     AddFirstInputFocusForFirefox: {})
