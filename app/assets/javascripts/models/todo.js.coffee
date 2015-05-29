@@ -1,6 +1,6 @@
 TodosApp.Models.Todo = Backbone.Model.extend(defaults: ->
+  urlRoot: "/todos"
   {
-    id: @cid
     name: null
     hours: null
     comment: null

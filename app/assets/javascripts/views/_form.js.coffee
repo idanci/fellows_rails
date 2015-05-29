@@ -5,8 +5,6 @@ TodosApp.Views.TodoForm = Backbone.Marionette.ItemView.extend(
     urgent: '[name=urgent]'
     comment: '[name=comment]'
 
-  behaviors: {}
-
   events: 'submit #form': 'save'
 
   initialize: (options) ->
@@ -26,14 +24,13 @@ TodosApp.Views.TodoForm = Backbone.Marionette.ItemView.extend(
     @modelBinder.unbind()
 
   back: ->
-    window.location.href = "http://localhost:3000"
+    Backbone.history.navigate("/", {replace: true, trigger: true})
 
   save: (event) ->
     event.preventDefault()
     TodosApp.todos.add @model
     @model.save()
     @back()
-    false
 
   destroy: ->
     if confirm('Are you sure?')

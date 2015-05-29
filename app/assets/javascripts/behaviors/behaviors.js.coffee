@@ -7,12 +7,11 @@ DestroyTodo = Marionette.Behavior.extend(
     if confirm(@options.message)
       @view.model.destroy()
       @view.close()
-      window.location.href = "http://localhost:3000"
+      Backbone.history.navigate("/", {replace: true, trigger: true})
+
 )
 AddFirstInputFocusForFirefox = Marionette.Behavior.extend(
   setFocus: ->
-    $input = undefined
-    inputVal = undefined
     $input = @$('form').find('input[type=text],textarea,select').filter(':visible:first').focus()
     inputVal = $input.val()
     $input.focus().val(String.fromCharCode(35)).val inputVal
@@ -31,7 +30,7 @@ ColorBackground = Marionette.Behavior.extend(
 GoBack = Marionette.Behavior.extend(
   events: 'click #back': 'back'
   back: ->
-    window.location.href = "http://localhost:3000"
+    Backbone.history.navigate("/", {replace: true, trigger: true})
 )
 SubmitForm = Marionette.Behavior.extend(
   events: 'submit #form': 'save'
@@ -39,7 +38,7 @@ SubmitForm = Marionette.Behavior.extend(
     event.preventDefault()
     TodosApp.todos.add @view.model
     @view.model.save()
-    window.location.href = "http://localhost:3000"
+    Backbone.history.navigate("/", {replace: true, trigger: true})
 )
 CloseWarnOnAdd = Marionette.Behavior.extend(
   defaults: 'message': 'you are closing!'
