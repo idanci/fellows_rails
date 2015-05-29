@@ -18,30 +18,24 @@ class TodosController < ApplicationController
   def create
     @todo = Todo.new(todo_params)
 
-    respond_to do |format|
-      if @todo.save
-        format.json { render json: @todo }
-      else
-        format.json { render json: @todo.errors, status: :unprocessable_entity }
-      end
+    if @todo.save
+      render json: @todo
+    else
+      render json: @todo.errors, status: :unprocessable_entity
     end
   end
 
   def update
-    respond_to do |format|
-      if @todo.update(todo_params)
-        format.json { render :show, status: :ok, location: @todo }
-      else
-        format.json { render json: @todo.errors, status: :unprocessable_entity }
-      end
+    if @todo.update(todo_params)
+      render :show, status: :ok, location: @todo
+    else
+      render json: @todo.errors, status: :unprocessable_entity
     end
   end
 
   def destroy
     @todo.destroy
-    respond_to do |format|
-      format.json { head :no_content }
-    end
+    head :no_content
   end
 
   private
